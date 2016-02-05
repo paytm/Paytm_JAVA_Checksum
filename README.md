@@ -6,7 +6,7 @@ The Merchant needs to setup a server which will provide the functionality to gen
 More information about how the SDK work is given [here](https://paytm-wallet-sdk.readme.io/docs/how-does-paytm-sdk-work).
 
 # Installation
- 1. Copy the files kept at *'jsp android utility'* into the Webserver's *webapp* folder. This will be folder where you want to host your checksum project. The files are as given below:
-  - jsp android utility/paytmCheckSumGenerator.jsp
-  - jsp android utility/paytmCheckSumVerify.jsp
+ 1. Copy the below mentioned files into the Webserver's *webapp* folder. This will be folder where you want to host your checksum project.
+  - paytmCheckSumGenerator.jsp
+  - paytmCheckSumVerify.jsp
  2. Copy the *paytm-checksum-1.0.jar* into the Webserver's *lib* folder.
