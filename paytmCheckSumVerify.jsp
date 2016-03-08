@@ -45,7 +45,7 @@
 	outputHtml.append("<body>");
 	outputHtml.append("Redirect back to the app<br>");
 	outputHtml.append("<form name='frm' method='post'>");
-	outputHtml.append("<input type='hidden' id='response' name='responseField' value='" + gson.toJson(parameters) + "'");
+	outputHtml.append("<input type='hidden' id='response' name='responseField' value='" + gson.toJson(parameters) + "' />");
 	outputHtml.append("</form>");
 	outputHtml.append("</body>");
 	outputHtml.append("</html>");
