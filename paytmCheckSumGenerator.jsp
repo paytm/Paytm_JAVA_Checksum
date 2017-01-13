@@ -16,7 +16,7 @@ String paytmChecksum =  "";
 while(paramNames.hasMoreElements()) {
 	String paramName = (String)paramNames.nextElement();
 	String paramValue = (String)mapData.get(paramName)[0];
-	
+
 	//// below code snippet is mandatory, so that no one can use your checksumgeneration url for other purpose .
 	if(paramValue.toLowerCase().contains("refund"){
 		hasSecurityIssue = true;
@@ -27,8 +27,7 @@ while(paramNames.hasMoreElements()) {
 }
 
 if(hasSecurityIssue){
-	out.println("Invalid Request !");
-	out.println("Security Compromise, Checksum cannot be created with the request");
+	out.println(" ");
 }else{
 	String checkSum =  CheckSumServiceHelper.getCheckSumServiceHelper().genrateCheckSum("PAYTM MERCHANT KEY", parameters);
 	parameters.put("CHECKSUMHASH",checkSum);
