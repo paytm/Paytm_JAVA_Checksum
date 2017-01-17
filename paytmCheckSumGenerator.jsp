@@ -7,11 +7,18 @@
 				com.paytm.merchant.CheckSumServiceHelper"%>
 <%
 
-boolean hasSecurityIssue = false;
 Enumeration<String> paramNames = request.getParameterNames();
 Map<String, String[]> mapData = request.getParameterMap();
 TreeMap<String,String> parameters = new TreeMap<String,String>();
+TreeMap<String,String> parametersOut = new TreeMap<String,String>();
 String paytmChecksum =  "";
+parameters.put("MID","");	
+parameters.put("ORDER_ID","");
+parameters.put("INDUSTRY_TYPE_ID","");
+parameters.put("CHANNEL_ID","");
+parameters.put("TXN_AMOUNT","");
+parameters.put("CUST_ID","");
+parameters.put("WEBSITE","");
 
 while(paramNames.hasMoreElements()) {
 	String paramName = (String)paramNames.nextElement();
@@ -19,20 +26,18 @@ while(paramNames.hasMoreElements()) {
 
 	//// below code snippet is mandatory, so that no one can use your checksumgeneration url for other purpose .
 	if(paramValue.toLowerCase().contains("refund"){
-		hasSecurityIssue = true;
-		break;
+		continue;
 	}
 
 	parameters.put(paramName,paramValue);	
 }
 
-if(hasSecurityIssue){
-	out.println(" ");
-}else{
+
 	String checkSum =  CheckSumServiceHelper.getCheckSumServiceHelper().genrateCheckSum("PAYTM MERCHANT KEY", parameters);
-	parameters.put("CHECKSUMHASH",checkSum);
-	parameters.put("payt_STATUS","1");
+	parametersOut.put("CHECKSUMHASH",checkSum);
+	parametersOut.put("payt_STATUS","1");
+	parametersOut.put("ORDER_ID",mapData.get("ORDER_ID")[0]);
 	Gson gson = new GsonBuilder().disableHtmlEscaping().create();
 	out.println(gson.toJson(parameters));
-}
+
 %>
