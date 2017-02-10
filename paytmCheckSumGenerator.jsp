@@ -38,6 +38,6 @@ while(paramNames.hasMoreElements()) {
 	parametersOut.put("payt_STATUS","1");
 	parametersOut.put("ORDER_ID",mapData.get("ORDER_ID")[0]);
 	Gson gson = new GsonBuilder().disableHtmlEscaping().create();
-	out.println(gson.toJson(parameters));
+	out.println(gson.toJson(parametersOut));
 
 %>
