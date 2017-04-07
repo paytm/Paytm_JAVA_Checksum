@@ -25,7 +25,7 @@ while(paramNames.hasMoreElements()) {
 	String paramValue = (String)mapData.get(paramName)[0];
 
 	//// below code snippet is mandatory, so that no one can use your checksumgeneration url for other purpose .
-	if(paramValue.toLowerCase().contains("refund")){
+	if(paramValue.toLowerCase().contains("refund") || paramValue.toLowerCase().contains("|")){
 		continue;
 	}
 
