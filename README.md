@@ -1,2 +1,2 @@
-# Checksum - Ruby Language
-* More Details: **https://developer.paytm.com/docs/checksum/#ruby**
+# Checksum - Java Language
+* More Details: **https://developer.paytm.com/docs/checksum/#java**
