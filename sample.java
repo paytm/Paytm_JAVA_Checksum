@@ -14,8 +14,8 @@ public class Sample {
          * Generate checksum by parameters we have
          * Find your Merchant Key in your Paytm Dashboard at https://dashboard.paytm.com/next/apikeys
          */
-        String paytmChecksum = PaytmChecksum.generateSignature(params, "YOUR_KEY_HERE");
-        boolean verifySignature = PaytmChecksum.verifySignature(params, "YOUR_KEY_HERE", paytmChecksum);
+        String paytmChecksum = PaytmChecksum.generateSignature(params, "YOUR_MERCHANT_KEY");
+        boolean verifySignature = PaytmChecksum.verifySignature(params, "YOUR_MERCHANT_KEY", paytmChecksum);
         System.out.println("generateSignature Returns: " + paytmChecksum);
         System.out.println("verifySignature Returns: " + verifySignature);
 
@@ -27,8 +27,8 @@ public class Sample {
          * Generate checksum by parameters we have in body
          * Find your Merchant Key in your Paytm Dashboard at https://dashboard.paytm.com/next/apikeys
          */
-        paytmChecksum = PaytmChecksum.generateSignature(body, "YOUR_KEY_HERE");
-        verifySignature = PaytmChecksum.verifySignature(body, "YOUR_KEY_HERE", paytmChecksum);
+        paytmChecksum = PaytmChecksum.generateSignature(body, "YOUR_MERCHANT_KEY");
+        verifySignature = PaytmChecksum.verifySignature(body, "YOUR_MERCHANT_KEY", paytmChecksum);
         System.out.println("generateSignature Returns: " + paytmChecksum);
         System.out.println("verifySignature Returns: " + verifySignature);
     }
